@@ -1,32 +1,45 @@
-<div class="accordion-inner component-inner" role="region" aria-label="{{_globals._components._accordion.ariaRegion}}">
-    {{> component this}}
-    <div class="accordion-widget component-widget">
-        {{#each _items}}
-        <div class="accordion-item{{#if _classes}} {{_classes}}{{/if}}" data-index="{{_index}}">
-            <button class="base accordion-item-title{{#if _isVisited}} visited{{/if}}" aria-expanded="false" aria-label="{{{a11y_normalize title}}}">
-                <div class="accordion-item-title-inner">
-                    <div class="accordion-item-title-icon icon icon-plus h5"></div>
-                    {{{title}}}
-                </div>
-            </button>
-            <div class="accordion-item-body">
-                <div class="accordion-item-body-inner">
-                    <div class="accordion-item-text">
-                        {{{a11y_text body}}}
-                    </div>
-                    {{#if _graphic}}
-                    {{#if _graphic.src}}
-                    <div class="accordion-item-graphic">
-                        <img src="{{_graphic.src}}" aria-label="{{_graphic.alt}}" tabindex="0">
-                    </div>
-                    {{#if _graphic.attribution}}
-                        <div class="graphic-attribution">{{{_graphic.attribution}}}</div>
-                    {{/if}}
-                    {{/if}}
-                    {{/if}}
-                </div>
-            </div>
+<div class="accordion__inner component__inner" role="region" aria-label="{{_globals._components._accordion.ariaRegion}}">
+
+  {{> component this}}
+
+  <div class="accordion__widget component__widget">
+
+    {{#each _items}}
+    <div class="accordion__item{{#if _classes}} {{_classes}}{{/if}}" data-index="{{_index}}">
+
+      <button class="accordion__item-title{{#if _isVisited}} is-visited{{/if}} js-accordion-item-title" aria-expanded="false" aria-label="{{{a11y_normalize title}}}">
+        <div class="accordion__item-title-inner">
+          {{!-- set 'icon-plus' via less instead? --}}
+          <div class="accordion__item-title-icon icon icon-plus"></div>
+          {{{title}}}
         </div>
-        {{/each}}
+      </button>
+
+      <div class="accordion__item-body">
+        <div class="accordion__item-body-inner">
+
+          <div class="accordion__item-text">
+            {{{a11y_text body}}}
+          </div>
+
+          {{#if _graphic}}
+          {{#if _graphic.src}}
+          <div class="accordion__item-graphic">
+            <img class="accordion__item-graphic-inner" src="{{_graphic.src}}" aria-label="{{_graphic.alt}}" tabindex="0">
+          </div>
+
+          {{#if _graphic.attribution}}
+          <div class="graphic__attribution">{{{_graphic.attribution}}}</div>
+          {{/if}}
+          {{/if}}
+          {{/if}}
+
+        </div>
+      </div>
+
     </div>
+    {{/each}}
+
+  </div>
+
 </div>
