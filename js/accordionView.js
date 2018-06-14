@@ -48,17 +48,17 @@ define([
 
       var $item = this.getItemElement(item);
 
-      $item.children('.accordion__item-title').addClass('is-visited');
+      $item.children('.m-accordion__item-title').addClass('is-visited');
     },
 
     toggleItem: function(item, shouldExpand) {
       var $item = this.getItemElement(item);
-      var $body = $item.children('.accordion__item-body').stop(true, true);
+      var $body = $item.children('.m-accordion__item-body').stop(true, true);
 
-      $item.children('.accordion__item-title')
+      $item.children('.m-accordion__item-title')
         .toggleClass('is-selected', shouldExpand)
         .attr('aria-expanded', shouldExpand);
-      $item.find('.accordion__item-title-icon')
+      $item.find('.m-accordion__item-title-icon')
         .toggleClass('icon-plus', !shouldExpand)
         .toggleClass('icon-minus', shouldExpand);
 
@@ -75,7 +75,7 @@ define([
     getItemElement: function(item) {
       var index = item.get('_index');
 
-      return this.$('.accordion__item').filter('[data-index="' + index +'"]');
+      return this.$('.m-accordion__item').filter('[data-index="' + index +'"]');
     }
 
   });
