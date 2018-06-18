@@ -1,50 +1,4 @@
 .m-accordion {
-  // --------------------------------------------------
-  // Predefined image alignment classes
-  // --------------------------------------------------
-  &__item.align-image-left,
-  &__item.align-image-right {
-    @media (min-width: @device-width-medium) {
-      .m-accordion__item-body-inner {
-        display: flex;
-      }
-
-      .m-accordion__item-text,
-      .m-accordion__item-image-container {
-        width: 50%;
-      }
-
-      .m-accordion__item-image-container {
-        padding-top: 0;
-      }
-    }
-  }
-
-  &__item.align-image-left {
-    @media (min-width: @device-width-medium) {
-      .m-accordion__item-body-inner {
-        flex-direction: row-reverse;
-      }
-
-      .m-accordion__item-image-container {
-        padding-right: @item-padding;
-      }
-    }
-  }
-
-  &__item.align-image-right {
-    @media (min-width: @device-width-medium) {
-      .m-accordion__item-body-inner {
-        flex-direction: row;
-      }
-
-      .m-accordion__item-image-container {
-        padding-left: @item-padding;
-      }
-    }
-  }
-  // --------------------------------------------------
-
   &__item-title {
     position: relative;
     padding: @item-padding @item-padding @item-padding (@icon-size + (@item-padding * 2));
@@ -52,7 +6,7 @@
     text-align: left;
 
     .dir-rtl & {
-      padding-left: inherit;
+      padding-left: @item-padding;
       padding-right: @icon-size + (@item-padding * 2);
       text-align: right;
     }
@@ -62,7 +16,7 @@
     position: absolute;
     top: 50%;
     left: @item-padding;
-    margin-top: -(@icon-size / 2);
+    .transform(translateY(-50%));
 
     .dir-rtl & {
       left: inherit;
@@ -73,12 +27,43 @@
   &__item-body {
     display: none;
   }
+}
 
-  &__item-body-inner {
-    padding: @item-padding;
+.m-accordion__item {
+  // --------------------------------------------------
+  // Predefined image alignment classes
+  // Could this be refactored better?
+  // --------------------------------------------------
+  .size-large &.align-image-left,
+  .size-large &.align-image-right {
+    .m-accordion__item-body-inner {
+      display: flex;
+    }
+
+    .m-accordion__item-text,
+    .m-accordion__item-image-container {
+      width: 50%;
+    }
   }
 
-  &__item-image-container {
-    padding-top: @item-padding;
+  .size-large &.align-image-left {
+    .m-accordion__item-body-inner {
+      flex-direction: row-reverse;
+    }
+
+    .m-accordion__item-image-container {
+      padding-right: @item-padding;
+    }
   }
+
+  .size-large &.align-image-right {
+    .m-accordion__item-body-inner {
+      flex-direction: row;
+    }
+
+    .m-accordion__item-image-container {
+      padding-left: @item-padding;
+    }
+  }
+  // --------------------------------------------------
 }
