@@ -5,7 +5,7 @@ define([
   var AccordionView = ComponentView.extend({
 
     events: {
-      'click .js-accordion-item-title': 'onClick'
+      'click .js-toggle-item': 'onClick'
     },
 
     preRender: function() {
@@ -58,9 +58,9 @@ define([
       $item.children('.m-accordion__item-title')
         .toggleClass('is-selected', shouldExpand)
         .attr('aria-expanded', shouldExpand);
-      $item.find('.m-accordion__item-title-icon')
-        .toggleClass('icon-plus', !shouldExpand)
-        .toggleClass('icon-minus', shouldExpand);
+      $item.children('.m-accordion__item-title')
+        .toggleClass('is-closed', !shouldExpand)
+        .toggleClass('is-open', shouldExpand);
 
       if (!shouldExpand) {
         $body.slideUp(this.model.get('_toggleSpeed'));

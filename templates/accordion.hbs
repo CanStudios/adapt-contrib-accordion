@@ -7,11 +7,12 @@
     {{#each _items}}
     <div class="m-accordion__item{{#if _classes}} {{_classes}}{{/if}}" data-index="{{_index}}">
 
-      <button class="m-accordion__item-title{{#if _isVisited}} is-visited{{/if}} js-accordion-item-title" aria-expanded="false" aria-label="{{{a11y_normalize title}}}">
+      <button class="m-accordion__item-title js-toggle-item is-closed{{#if _isVisited}} is-visited{{/if}}" aria-expanded="false" aria-label="{{{a11y_normalize title}}}">
         <div class="m-accordion__item-title-inner">
 
-          {{!-- set 'icon-plus' via less instead? --}}
-          <div class="m-accordion__item-title-icon icon icon-plus"></div>
+          <div class="m-accordion__item-title-icon">
+            <div class="icon"></div>
+          </div>
 
           <div class="m-accordion__item-title-text">
             <div class="m-accordion__item-title-text-inner">
