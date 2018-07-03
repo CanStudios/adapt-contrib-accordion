@@ -24,13 +24,13 @@
     }
   }
 
-  &__item-title.is-closed {
+  &__item-title.--is-closed {
     .icon {
       .icon-plus;
     }
   }
 
-  &__item-title.is-open {
+  &__item-title.--is-open {
     .icon {
       .icon-minus;
     }
@@ -39,34 +39,34 @@
   &__item-body {
     display: none;
   }
-}
 
-// --------------------------------------------------
-// Predefined image alignment classes
-// --------------------------------------------------
-@media (min-width: @device-width-medium) {
-  .m-accordion__item.align-image-left {
-    .m-accordion__item-body-inner {
-      display: flex;
-      flex-direction: row-reverse;
+  // --------------------------------------------------
+  // Predefined image alignment classes
+  // --------------------------------------------------
+  @media (min-width: @device-width-medium) {
+    &__item.--align-image-left {
+      .m-accordion__item-body-inner {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      .m-accordion__item-text,
+      .m-accordion__item-image-container {
+        width: 50%;
+      }
     }
 
-    .m-accordion__item-text,
-    .m-accordion__item-image-container {
-      width: 50%;
+    &__item.--align-image-right {
+      .m-accordion__item-body-inner {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .m-accordion__item-text,
+      .m-accordion__item-image-container {
+        width: 50%;
+      }
     }
   }
-
-  .m-accordion__item.align-image-right {
-    .m-accordion__item-body-inner {
-      display: flex;
-      flex-direction: row;
-    }
-
-    .m-accordion__item-text,
-    .m-accordion__item-image-container {
-      width: 50%;
-    }
-  }
+  // --------------------------------------------------
 }
-// --------------------------------------------------
