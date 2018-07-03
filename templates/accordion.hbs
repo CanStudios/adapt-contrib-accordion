@@ -5,9 +5,9 @@
   <div class="component__widget m-accordion__widget">
 
     {{#each _items}}
-    <div class="m-accordion__item{{#if _classes}} --{{_classes}}{{/if}}" data-index="{{_index}}">
+    <div class="m-accordion__item{{#if _classes}} {{_classes}}{{/if}}" data-index="{{_index}}">
 
-      <button class="m-accordion__item-title js-toggle-item --is-closed{{#if _isVisited}} --is-visited{{/if}}" aria-expanded="false" aria-label="{{{a11y_normalize title}}}">
+      <button class="m-accordion__item-title js-toggle-item is-closed{{#if _isVisited}} is-visited{{/if}}" aria-expanded="false" aria-label="{{{a11y_normalize title}}}">
         <div class="m-accordion__item-title-inner">
 
           <div class="m-accordion__item-title-icon">

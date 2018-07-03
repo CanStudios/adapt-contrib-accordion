@@ -47,7 +47,7 @@ define([
 
       var $item = this.getItemElement(item);
 
-      $item.children('.m-accordion__item-title').addClass('--is-visited');
+      $item.children('.m-accordion__item-title').addClass('is-visited');
     },
 
     toggleItem: function(item, shouldExpand) {
@@ -55,11 +55,11 @@ define([
       var $body = $item.children('.m-accordion__item-body').stop(true, true);
 
       $item.children('.m-accordion__item-title')
-        .toggleClass('--is-selected', shouldExpand)
+        .toggleClass('is-selected', shouldExpand)
         .attr('aria-expanded', shouldExpand);
       $item.children('.m-accordion__item-title')
-        .toggleClass('--is-closed', !shouldExpand)
-        .toggleClass('--is-open', shouldExpand);
+        .toggleClass('is-closed', !shouldExpand)
+        .toggleClass('is-open', shouldExpand);
 
       if (!shouldExpand) {
         $body.slideUp(this.model.get('_toggleSpeed'));

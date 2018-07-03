@@ -24,13 +24,13 @@
     }
   }
 
-  &__item-title.--is-closed {
+  &__item-title.is-closed {
     .icon {
       .icon-plus;
     }
   }
 
-  &__item-title.--is-open {
+  &__item-title.is-open {
     .icon {
       .icon-minus;
     }
@@ -44,7 +44,7 @@
   // Predefined image alignment classes
   // --------------------------------------------------
   @media (min-width: @device-width-medium) {
-    &__item.--align-image-left {
+    &__item.align-image-left {
       .m-accordion__item-body-inner {
         display: flex;
         flex-direction: row-reverse;
@@ -56,7 +56,7 @@
       }
     }
 
-    &__item.--align-image-right {
+    &__item.align-image-right {
       .m-accordion__item-body-inner {
         display: flex;
         flex-direction: row;
