@@ -24,6 +24,9 @@
     }
   }
 
+  // --------------------------------------------------
+  // Item icon states
+  // --------------------------------------------------
   &__item-title.is-closed {
     .icon {
       .icon-plus;
@@ -35,6 +38,7 @@
       .icon-minus;
     }
   }
+  // --------------------------------------------------
 
   &__item-body {
     display: none;
@@ -42,6 +46,8 @@
 
   // --------------------------------------------------
   // Predefined image alignment classes
+  // Aligns image either left or right on desktop
+  // Defaults to underneath on smaller screens
   // --------------------------------------------------
   @media (min-width: @device-width-medium) {
     &__item.align-image-left {
