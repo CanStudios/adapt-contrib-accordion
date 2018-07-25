@@ -7,15 +7,15 @@
     {{#each _items}}
     <div class="m-accordion__item{{#if _classes}} {{_classes}}{{/if}}" data-index="{{_index}}">
 
-      <button class="m-accordion__item-title js-toggle-item is-closed{{#if _isVisited}} is-visited{{/if}}" aria-expanded="false" aria-label="{{{a11y_normalize title}}}">
-        <div class="m-accordion__item-title-inner">
+      <button class="m-accordion__item-btn js-toggle-item is-closed{{#if _isVisited}} is-visited{{/if}}" aria-expanded="false" aria-label="{{{a11y_normalize title}}}">
+        <div class="m-accordion__item-btn-inner">
 
-          <div class="m-accordion__item-title-icon">
+          <div class="m-accordion__item-icon">
             <div class="icon"></div>
           </div>
 
-          <div class="m-accordion__item-title-text">
-            <div class="m-accordion__item-title-text-inner">
+          <div class="m-accordion__item-title">
+            <div class="m-accordion__item-title-inner">
               {{{title}}}
             </div>
           </div>
@@ -23,11 +23,11 @@
         </div>
       </button>
 
-      <div class="m-accordion__item-body">
-        <div class="m-accordion__item-body-inner">
+      <div class="m-accordion__item-content">
+        <div class="m-accordion__item-content-inner">
 
-          <div class="m-accordion__item-text">
-            <div class="m-accordion__item-text-inner">
+          <div class="m-accordion__item-body">
+            <div class="m-accordion__item-body-inner">
               {{{a11y_text body}}}
             </div>
           </div>

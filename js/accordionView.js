@@ -47,17 +47,17 @@ define([
 
       var $item = this.getItemElement(item);
 
-      $item.children('.m-accordion__item-title').addClass('is-visited');
+      $item.children('.m-accordion__item-btn').addClass('is-visited');
     },
 
     toggleItem: function(item, shouldExpand) {
       var $item = this.getItemElement(item);
-      var $body = $item.children('.m-accordion__item-body').stop(true, true);
+      var $body = $item.children('.m-accordion__item-content').stop(true, true);
 
-      $item.children('.m-accordion__item-title')
+      $item.children('.m-accordion__item-btn')
         .toggleClass('is-selected', shouldExpand)
         .attr('aria-expanded', shouldExpand);
-      $item.children('.m-accordion__item-title')
+      $item.children('.m-accordion__item-btn')
         .toggleClass('is-closed', !shouldExpand)
         .toggleClass('is-open', shouldExpand);
 

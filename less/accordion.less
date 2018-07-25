@@ -1,5 +1,5 @@
 .m-accordion {
-  &__item-title {
+  &__item-btn {
     position: relative;
     padding: @item-padding @item-padding @item-padding (@icon-size + (@item-padding * 2));
     width: 100%;
@@ -12,7 +12,7 @@
     }
   }
 
-  &__item-title-icon {
+  &__item-icon {
     position: absolute;
     top: 50%;
     left: @item-padding;
@@ -27,20 +27,20 @@
   // --------------------------------------------------
   // Item icon states
   // --------------------------------------------------
-  &__item-title.is-closed {
+  &__item-btn.is-closed {
     .icon {
       .icon-plus;
     }
   }
 
-  &__item-title.is-open {
+  &__item-btn.is-open {
     .icon {
       .icon-minus;
     }
   }
   // --------------------------------------------------
 
-  &__item-body {
+  &__item-content {
     display: none;
   }
 
@@ -51,24 +51,24 @@
   // --------------------------------------------------
   @media (min-width: @device-width-medium) {
     &__item.align-image-left {
-      .m-accordion__item-body-inner {
+      .m-accordion__item-content-inner {
         display: flex;
         flex-direction: row-reverse;
       }
 
-      .m-accordion__item-text,
+      .m-accordion__item-body,
       .m-accordion__item-image-container {
         width: 50%;
       }
     }
 
     &__item.align-image-right {
-      .m-accordion__item-body-inner {
+      .m-accordion__item-content-inner {
         display: flex;
         flex-direction: row;
       }
 
-      .m-accordion__item-text,
+      .m-accordion__item-body,
       .m-accordion__item-image-container {
         width: 50%;
       }
